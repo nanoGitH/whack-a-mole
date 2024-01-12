@@ -1,4 +1,6 @@
 let currMoleTile;
+let score = 0;
+let gameOver =  false;
 
 window.onload = function() {
     setGame();
@@ -8,6 +10,7 @@ function setGame() {
     for (let i = 0; i < 9; i++) {
         let tile = document.createElement("div");
         tile.id = i.toString();
+        tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);        
     }
 
@@ -20,6 +23,10 @@ function getRandomTile() {
 }
 
 function setMole() {
+    if (gameOver) {
+        return;
+    }
+
     if(currMoleTile) {
         currMoleTile.innerHTML = '';
     }
@@ -29,4 +36,19 @@ function setMole() {
     let num = getRandomTile();
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
+}
+
+function selectTile() {
+    if (gameOver) {
+        return;
+    }
+    
+    if (this == currMoleTile) {
+        score += 10;
+        document.querySelector("h2").innerText = score.toString();
+    }else if (this != currMoleTile) {
+        const gameOverScreen = document.getElementById("gameOver");
+        gameOverScreen.style.display = "block";
+        gameOver = true;
+    }
 }

@@ -27,3 +27,21 @@ body{
     width: 100px;
     height: 100px;
 }
+
+#gameOver{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 540px;
+    height: 540px;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: -545px;
+    color: black;
+    position: relative;
+    display: none;
+}
+
+#gameOver p{
+    margin: 0;
+    padding-top: 200px;
+    font-size: 100px;
+}
