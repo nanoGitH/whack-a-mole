@@ -1,0 +1,29 @@
+body{
+    background-image: url(MTXX_MH20240112_112455469.jpg);
+    text-align: center;
+    background-size: cover;
+    color: white;
+}
+
+#board{
+    background-color: rgb(0, 93, 93);
+    width: 540px;
+    height: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid rgb(182, 85, 75);
+    border-radius: 25px;
+}
+
+#board div {
+    width: 180px;
+    height: 180px;
+    background-image: url(pipe.png);
+    background-size: cover;
+}
+
+#board div img {
+    width: 100px;
+    height: 100px;
+}
